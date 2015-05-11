@@ -1,0 +1,25 @@
+inherit kf5
+
+NAME="kf5-kunitconversion"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 unit conversion library"
+DESCRIPTION="KUnitConversion provides functions to convert values in different
+physical units. It supports converting different prefixes (e.g. kilo, mega, giga)
+as well as converting between different unit systems (e.g. liters, gallons)."
+
+PKG_NAMES="libKF5UnitConversion5 libKF5UnitConversion-devel"
+libKF5UnitConversion5_CONTENTS="
+	usr/bin/cygKF5UnitConversion-5.dll
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5UnitConversion_devel_REQUIRES="libKF5I18n-devel libQt5Core-devel"
+libKF5UnitConversion_devel_CONTENTS="
+	usr/include/KF5/KUnitConversion/
+	usr/include/KF5/kunitconversion_version.h
+	usr/lib/cmake/KF5UnitConversion/
+	${QT5_MKSPECSDIR#/}/modules/qt_KUnitConversion.pri
+	usr/lib/libKF5UnitConversion.dll.a
+"
